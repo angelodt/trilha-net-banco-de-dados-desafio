@@ -1,0 +1,12 @@
+SELECT Nome, Ano FROM FILMES;
+SELECT Nome, Ano, Duracao FROM FILMES ORDER BY Ano ASC;
+SELECT Nome, Ano, Duracao FROM FILMES WHERE Nome like 'De Volta para o Futuro';
+SELECT Nome, Ano, Duracao FROM FILMES WHERE Ano = 1997;
+SELECT Nome, Ano, Duracao FROM FILMES WHERE Ano > 2000;
+SELECT Nome, Ano, Duracao FROM FILMES WHERE Duracao > 100 and Duracao < 150 ORDER BY Duracao ASC;
+SELECT Ano, COUNT(Id) AS Quantidade FROM FILMES GROUP BY Ano ORDER BY Quantidade DESC;
+SELECT PrimeiroNome, UltimoNome FROM Atores WHERE Genero = 'M'; 
+SELECT PrimeiroNome, UltimoNome FROM Atores WHERE Genero = 'F' ORDER BY PrimeiroNome ASC; 
+SELECT F.Nome, g.Genero FROM FilmesGenero fg, Filmes f, Generos g WHERE f.id = fg.IdFilme and g.id=fg.IdGenero;
+SELECT F.Nome, g.Genero FROM FilmesGenero fg, Filmes f, Generos g WHERE f.id = fg.IdFilme and g.id=fg.IdGenero and g.Genero like 'Mistério';
+SELECT F.Nome, a.PrimeiroNome, a.UltimoNome, ef.Papel  FROM Filmes f, Atores a, ElencoFilme ef WHERE f.id = ef.IdFilme and a.id=ef.IdAtor; 
